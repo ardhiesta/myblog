@@ -23,6 +23,14 @@
     </div>
 @endif
  
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+<script>
+	tinymce.init({
+		selector: '#mytextarea'
+	});
+</script>
+ 
 <form action="{{ route('posts.store') }}" method="POST">
     @csrf
  
@@ -36,7 +44,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Content:</strong>
-                <textarea class="form-control" style="height:150px" name="content" placeholder="Content"></textarea>
+                <textarea id="mytextarea" class="form-control" style="height:150px" name="content" placeholder="Content"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
