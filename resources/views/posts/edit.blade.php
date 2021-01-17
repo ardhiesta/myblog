@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template_tinymce')
  
 @section('content')
     <div class="row mt-5 mb-5">
@@ -37,7 +37,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Content:</strong>
-                    <textarea class="form-control" style="height:150px" name="content" placeholder="Content">{{ $post->content }}</textarea>
+                    <textarea id="mytextarea" class="form-control" style="height:150px" name="content" placeholder="Content">{{ $post->content }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
