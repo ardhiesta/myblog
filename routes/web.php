@@ -14,8 +14,16 @@ use App\Http\Controllers\PostController;
 |
 */
 
+// root url diarahkan ke /posts
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return redirect('/posts');
 });
 
-Route::resource('posts', PostController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::resource('posts', PostController::class)->middleware(['auth']);
